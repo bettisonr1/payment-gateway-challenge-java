@@ -25,7 +25,7 @@ public class AquiringBankService {
     }
     
     public AquiringBankResponse postToAquiringBank(AquiringBankRequest paymentAquiringBankReq) throws BankException {
-        LOG.info("Connecting to bank for with request: " + paymentAquiringBankReq.toString());
+        LOG.info("Connecting to bank for request: " + paymentAquiringBankReq.toString());
         try {
             return restTemplate.postForObject(aquiringBankUrl, paymentAquiringBankReq, AquiringBankResponse.class);
         } catch (RestClientException e) {

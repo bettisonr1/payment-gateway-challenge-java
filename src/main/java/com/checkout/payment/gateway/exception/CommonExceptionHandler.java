@@ -27,7 +27,6 @@ public class CommonExceptionHandler {
     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error connecting to bank.");
   }
 
-  // TODO test
   @ExceptionHandler(CardDetailsException.class)
   public ResponseEntity<PaymentStatus> handleException(CardDetailsException ex) {
     LOG.info("Rejecting payment with reason: " + ex.getMessage());

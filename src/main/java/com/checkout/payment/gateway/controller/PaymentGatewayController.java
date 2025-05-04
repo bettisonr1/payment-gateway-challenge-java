@@ -39,11 +39,10 @@ public class PaymentGatewayController {
     return new ResponseEntity<>(paymentGatewayService.getPaymentById(id), HttpStatus.OK);
   }
 
-  // TODO test
   @PostMapping("/payment")
   public ResponseEntity<PostPaymentResponse> 
     processPayment(@Valid @RequestBody PostPaymentRequest postPaymentRequest, BindingResult bindingResult) {
-      LOG.info("Processing payment");
+      LOG.info("Process payment controller entered.");
       if(bindingResult.hasErrors()) {
         paymentValidator.handleErrors(bindingResult, postPaymentRequest);
       }
