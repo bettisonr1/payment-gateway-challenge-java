@@ -1,25 +1,16 @@
-# Instructions for candidates
+Running the code:
+Start the code as you would any Spring Boot project with the main class being PaymentGatewayApplication.java
 
-This is the Java version of the Payment Gateway challenge. If you haven't already read this [README.md](https://github.com/cko-recruitment/) on the details of this exercise, please do so now.
+Design decisions:
+I have split the application into four main areas:
+The controller, handling incoming REST requests from the client.
 
-## Requirements
-- JDK 17
-- Docker
+The validator, validating that card details are correct.
 
-## Template structure
+The payment gateway, forwarding a request on to the aquiring bank once validations are passed, and persisting the payment.
 
-src/ - A skeleton SpringBoot Application
+The aquiring bank service, responsible for contacting the bank.
 
-test/ - Some simple JUnit tests
+Testing:
+I have a mixture of unit tests and integration tests. I have integration tested the controller to get a thorough test of the application. I have tried to unit test each file individually where there is some logic that could be broken by future developments.
 
-imposters/ - contains the bank simulator configuration. Don't change this
-
-.editorconfig - don't change this. It ensures a consistent set of rules for submissions when reformatting code
-
-docker-compose.yml - configures the bank simulator
-
-
-## API Documentation
-For documentation openAPI is included, and it can be found under the following url: **http://localhost:8090/swagger-ui/index.html**
-
-**Feel free to change the structure of the solution, use a different library etc.**

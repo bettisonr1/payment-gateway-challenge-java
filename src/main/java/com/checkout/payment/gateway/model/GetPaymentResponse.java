@@ -1,7 +1,8 @@
 package com.checkout.payment.gateway.model;
 
-import com.checkout.payment.gateway.enums.PaymentStatus;
 import java.util.UUID;
+
+import com.checkout.payment.gateway.enums.PaymentStatus;
 
 public class GetPaymentResponse {
   private UUID id;
